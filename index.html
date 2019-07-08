@@ -9,56 +9,48 @@
 <h2><strong>Audio Samples from "Non-Parallel Sequence-to-Sequence Voice Conversion with Disentangled Linguistic and
 Speaker Representations</strong>"</h2>
 <h3>Paper:</h3>
-<p>not available currently</p>
+<p>submitted to IEEE/ACM Transaction on Audio, Speech and Language Processing (pre-printed version avaible at <a href="https://arxiv.org/abs/1906.10508">here</a>)</p>
 <h3>Authors: </h3>
 Jing-Xuan Zhang, Zhen-Hua Ling, Li-Rong Dai
 <h3>Abstract: </h3>
-In this paper, we present a method for non-parallel sequence-to-sequence voice conversion based on disentangled
-representations learning. We assume acoustic features can be factorized into linguistic and speaker related
-information. Voice conversion can be achieved by preserving the linguistic rep- resentation of source utterance while
-replacing the speaker representation with the target one. We built our model under the framework of encoder-decoder.
-Encoders are used to ex- tract hidden representations which the decoder consumes for recovering acoustic features. For
-learning disentangled linguistic representations, we proposed two strategies. First, additional text inputs are used to
-extract linguistic hidden representations, which are pulled together with those from audio inputs to share the same
-linguistic space. Second, we used an adversarial training method to further wipe out the speaker related descriptions
-from the linguistic embeddings from audio signals. Meanwhile, speaker representations are extracted by a speaker
-encoder. Our model is built with the sequence-to-sequence network therefore there is no the constrain of the
-frame-by-frame conversion. A multi- speaker pre-training and adaptation on specific conversion pair training strategy
-is used. Experiments were conducted to compare the proposed method with strong baselines. The results showed that our
-method obtained higher similarity and naturalness compared to the top rank method in Voice Conversion Challenge 2018
-(VCC2018). And the performance of proposed method was closed to state-of-art parallel voice conversion method. Even
-with 5 times smaller training data of conversion pair, our model achieved comparable results to VCC2018 baseline.
-Ablation tests were further conducted to validate proposed strategies for disentangling and pre-training.</h3>
+This paper presents a method of sequence-to-sequence (seq2seq) voice conversion using non-parallel training data. In this method, disentangled linguistic and speaker representations are extracted from acoustic features, and voice conversion is achieved by preserving the linguistic representations of source utterances while replacing the speaker representations with the target ones. Our model is built under the framework of encoder-decoder neural networks. A recognition encoder is designed to learn the disentangled linguistic representations with two strategies. First, phoneme transcriptions of training data are introduced to provide the references for leaning linguistic representations of audio signals. Second, an adversarial training strategy is employed to further wipe out speaker information from the linguistic representations. Meanwhile, speaker representations are extracted from audio signals by a speaker encoder. The model parameters are estimated by two-stage training, including pre-training using a multi-speaker dataset and finetuning on the dataset of a specific conversion pair. Since both the recognition encoder and the decoder for recovering acoustic features are seq2seq neural networks, there are no constrains of frame alignment and frame-by-frame conversion in our proposed method. Experimental results showed that our method obtained higher similarity and naturalness than the top non-parallel voice conversion method in Voice Conversion Challenge 2018. The performance of our proposed method was closed to the state-of-the-art parallel seq2seq voice conversion method.
 
 <p>&nbsp;</p>
 <hr>
 <h3>0. Ground truth target samples</h3>
-<table width="648" border="1">
+<table border="1">
   <tr>
+  <td width="120px">&nbsp;
+  
+  </td>
     <td colspan="2"><blockquote>
-      <blockquote>
-        <blockquote>
-          <blockquote>
-            <blockquote>
+    
               <p align="center">slt</p>
-            </blockquote>
-          </blockquote>
-        </blockquote>
-      </blockquote>
+          
     </blockquote></td>
     <td colspan="2"><blockquote>
-      <blockquote>
-        <blockquote>
-          <blockquote>
-            <blockquote>
+     
               <p align="center">rms</p>
-            </blockquote>
-          </blockquote>
-        </blockquote>
-      </blockquote>
+           
     </blockquote></td>
   </tr>
   <tr>
+    <td><div align="center">source</div></td>
+    <td><audio src="wavs/rms-to-slt/truth/rms-arctic_a0058.wav" controls="controls">
+        Your browser does not support the audio tag.
+    </audio></td>
+    <td><audio src="wavs/rms-to-slt/truth/rms-arctic_a0138.wav" controls="controls">
+        Your browser does not support the audio tag.
+    </audio></td>
+    <td><audio src="wavs/slt-to-rms/truth/slt-arctic_b0247.wav" controls="controls">
+        Your browser does not support the audio tag.
+    </audio></td>
+    <td><audio src="wavs/slt-to-rms/truth/slt-arctic_b0496.wav" controls="controls">
+        Your browser does not support the audio tag.
+    </audio></td>
+  </tr>
+  <tr>
+    <td><div align="center">target</div></td>
     <td width="149">
     <audio src="wavs/rms-to-slt/truth/slt-arctic_a0058.wav" controls="controls">
         Your browser does not support the audio tag.
@@ -79,9 +71,9 @@ Ablation tests were further conducted to validate proposed strategies for disent
 <h3>&nbsp;</h3>
 <h3>1. Comparsion of proposed method to baseline methods</h3>
 <p>&nbsp;</p>
-<table width="935" border="1">
+<table border="1">
   <tr>
-    <td colspan="2"><div align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Methods&emsp;&emsp;&emsp;&emsp;</div></td>
+    <td colspan="2"><div align="center">Methods</div></td>
     <td colspan="2"><p align="center">rms-to-slt</p></td>
     <td colspan="2"><p align="center">slt-to-rms</p></td>
   </tr>
@@ -94,14 +86,14 @@ Ablation tests were further conducted to validate proposed strategies for disent
     <td width="157"><audio src="wavs/slt-to-rms/dnn/dnn-b0496.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
   </tr>
   <tr>
-    <td>Seq2seqVC</td>
+    <td width="120px">Seq2seqVC</td>
     <td><audio src="wavs/rms-to-slt/seq2seqvc/seq2seqvc-a0058.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
     <td><audio src="wavs/rms-to-slt/seq2seqvc/seq2seqvc-a0138.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
     <td><audio src="wavs/slt-to-rms/seq2seqvc/seq2seqvc-b0247.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
     <td><audio src="wavs/slt-to-rms/seq2seqvc/seq2seqvc-b0496.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
   </tr>
   <tr>
-    <td rowspan="3"><div align="center"><em>non-para</em></div></td>
+    <td rowspan="3", width="100px"><div align="center"><em>non-para</em></div></td>
     <td>CycleGAN</td>
     <td><audio src="wavs/rms-to-slt/cyclegan/cyclegan-a0058.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
     <td><audio src="wavs/rms-to-slt/cyclegan/cyclegan-a0138.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
@@ -125,28 +117,28 @@ Ablation tests were further conducted to validate proposed strategies for disent
 </table>
 <p>&nbsp;</p>
 <h3>2. Reducing size of training data for adaptation</h3>
-<table width="776" border="1">
+<table border="1">
   <tr>
-    <td width="111"><div align="center">Size of data</div></td>
+    <td width="120px"><div align="center">Size of data</div></td>
     <td colspan="2"><div align="center">rms-to-slt</div></td>
     <td colspan="2"><div align="center">slt-to-rms</div></td>
   </tr>
   <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;500 &emsp;&emsp;</td>
-    <td width="156"><audio src="wavs/rms-to-slt/proposed/Wav_arctic_a0058_ref_slt_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td><div align="center">500</div></td>
+    <td><audio src="wavs/rms-to-slt/proposed/Wav_arctic_a0058_ref_slt_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
     <td width="153"><audio src="wavs/rms-to-slt/proposed/Wav_arctic_a0138_ref_slt_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
     <td width="149"><audio src="wavs/slt-to-rms/proposed/Wav_arctic_b0247_ref_rms_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
     <td width="173"><audio src="wavs/slt-to-rms/proposed/Wav_arctic_b0496_ref_rms_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
   </tr>
   <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;300 &emsp;&emsp;</td>
+    <td><div align="center">300</div></td>
    <td width="156"><audio src="wavs/rms-to-slt/proposed_300/Wav_arctic_a0058_ref_slt_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
     <td width="153"><audio src="wavs/rms-to-slt/proposed_300/Wav_arctic_a0138_ref_slt_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
     <td width="149"><audio src="wavs/slt-to-rms/proposed_300/Wav_arctic_b0247_ref_rms_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
     <td width="173"><audio src="wavs/slt-to-rms/proposed_300/Wav_arctic_b0496_ref_rms_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
   </tr>
   <tr>
-    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100&emsp;&emsp;</td>
+    <td><div align="center">100</div></td>
     <td width="156"><audio src="wavs/rms-to-slt/proposed_100/Wav_arctic_a0058_ref_slt_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
     <td width="153"><audio src="wavs/rms-to-slt/proposed_100/Wav_arctic_a0138_ref_slt_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
     <td width="149"><audio src="wavs/slt-to-rms/proposed_100/Wav_arctic_b0247_ref_rms_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
@@ -155,9 +147,9 @@ Ablation tests were further conducted to validate proposed strategies for disent
 </table>
 <p>&nbsp;</p>
 <h3>3.Ablation studies</h3>
-<table width="970" border="1">
+<table border="1">
   <tr>
-    <td width="250"><div align="center">&nbsp;&nbsp;&nbsp; &nbsp;  &nbsp;Methods &emsp;&emsp;&emsp;&emsp;</div></td>
+    <td width="140px"><div align="center">Methods</div></td>
     <td colspan="2"><div align="center">rms-to-slt</div></td>
     <td colspan="2"><div align="center">slt-to-rms</div></td>
   </tr>
@@ -204,7 +196,7 @@ Ablation tests were further conducted to validate proposed strategies for disent
     <td width="173"><audio src="wavs/slt-to-rms/ablation/no-pretrain-Wav_arctic_b0496_ref_rms_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
   </tr>
 </table>
-&quot;<em>-adv</em>&quot;, &quot;-<var>L<sub>CT</sub></var>&quot;, &quot;<em>-text</em>&quot; represent proposed method without using adversarial training, contrastive loss, text encoder respectively. &quot;-pre-training&quot; represents proposed method without using pre-training strategy.
+<p>&quot;<em>-adv</em>&quot;, &quot;-<var>L<sub>CT</sub></var>&quot;, &quot;<em>-text</em>&quot; represent the proposed method without using adversarial training, contrastive loss, text inputs respectively. &quot;-pre-training&quot; represents the proposed method without using pre-training strategy. </p>
 <p>&nbsp;</p>
 
 
