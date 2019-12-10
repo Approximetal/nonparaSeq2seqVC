@@ -197,6 +197,68 @@ This paper presents a method of sequence-to-sequence (seq2seq) voice conversion 
   </tr>
 </table>
 <p>&quot;<em>-adv</em>&quot;, &quot;-<var>L<sub>CT</sub></var>&quot;, &quot;<em>-text</em>&quot; represent the proposed method without using adversarial training, contrastive loss, text inputs respectively. &quot;-pre-training&quot; represents the proposed method without using pre-training strategy. </p>
+<h3>4. More conversion pairs</h3>
+<p>Ground truth samples:</p>
+<table width="693" height="75" border="1">
+  <tr>
+    <td width="156">slt</td>
+    <td width="156">rms</td>
+    <td width="173">bdl</td>
+    <td width="180">clb</td>
+  </tr>
+  <tr>
+    <td><audio src="wavs/other/slt_arctic_a0013.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td><audio src="wavs/other/rms_arctic_a0013.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td><audio src="wavs/other/bdl_arctic_a0013.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+    <td><audio src="wavs/other/clb_arctic_a0013.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+</table>
+<p>Inter-gender conversion</p>
+<table width="671" border="1">
+  <tr>
+    <td width="330"><div align="center">Conversion direction</div></td>
+    <td width="265"><div align="center">Audio</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">slt-to-rms</div></td>
+    <td><audio src="wavs/other/rms_slt/Wav_arctic_a0013_ref_rms_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td><div align="center">rms-to-slt</div></td>
+    <td><audio src="wavs/other/rms_slt/Wav_arctic_a0013_ref_slt_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td><div align="center">clb-to-bdl</div></td>
+    <td><audio src="wavs/other/bdl_clb/Wav_arctic_a0013_ref_bdl_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td><div align="center">bdl-to-clb</div></td>
+    <td><audio src="wavs/other/bdl_clb/Wav_arctic_a0013_ref_clb_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+</table>
+<p>Intra-gender conversion</p>
+<table width="671" border="1">
+  <tr>
+    <td width="330"><div align="center">Conversion direction</div></td>
+    <td width="265"><div align="center">Audio</div></td>
+  </tr>
+  <tr>
+    <td><div align="center">slt-to-clb</div></td>
+    <td><audio src="wavs/other/slt_clb/Wav_arctic_a0013_ref_clb_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td><div align="center">clb-to-slt</div></td>
+    <td><audio src="wavs/other/slt_clb/Wav_arctic_a0013_ref_slt_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td><div align="center">rms-to-bdl</div></td>
+    <td><audio src="wavs/other/bdl_rms/Wav_arctic_a0013_ref_bdl_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+  <tr>
+    <td><div align="center">bdl-to-rms</div></td>
+    <td><audio src="wavs/other/bdl_rms/Wav_arctic_a0013_ref_rms_VC.wav" controls="controls"> Your browser does not support the audio tag. </audio></td>
+  </tr>
+</table>
 <p>&nbsp;</p>
 
 
